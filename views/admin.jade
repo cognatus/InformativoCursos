@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+	script( src="/javascripts/factories/adminFactory.js" )
+	script( src="/javascripts/controllers/adminCtrl.js" )
+
+	h1= title
+	p Welcome to #{title}
+	div( ng-controller="adminCtrl", ng-init="init()" )
+		table
+			tr
+				th Alumno
+				th Curso
+				th Telefono
+				th Email
+				th Escuela
+				th Edad
+			tr( ng-repeat=" alumno in alumnos" )
+				td {{alumno.nombre}}
+				td {{alumno.curso}}
+				td {{alumno.telefono}}
+				td {{alumno._id}}
+				td {{alumno.escuela}}
+				td {{alumno.edad}}

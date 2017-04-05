@@ -1,6 +1,10 @@
 extends layout
 
 block content
+
+	script( src="/javascripts/factories/registroFactory.js" )
+	script( src="/javascripts/controllers/registroCtrl.js" )
+
 	h1= title
 	p Welcome to #{title}
 	form( ng-controller="registroCtrl", ng-submit="registra()" )

@@ -6,6 +6,9 @@ var Alumno = require('../moduls/Alumno');
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Cursos Locos' });
 });
+router.get('/admin', function(req, res, next) {
+	res.render('admin', { title: 'Cursos Locos Admin' });
+});
 
 /* API stuff */
 router.post('/registrar', function(req, res, next) {
@@ -24,5 +27,16 @@ router.post('/registrar', function(req, res, next) {
 		res.json(alumno);
 	});
 });
+
+router.get('/obtenerAlumnos', function(req, res, next) {
+	Alumno.find({}, function(err, alumnos){
+		if (err)
+			res.send(err);
+		res.json(alumnos);
+	 });
+});
+
+
+
 
 module.exports = router;
