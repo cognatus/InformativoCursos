@@ -10,6 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+var mongoose = require('mongoose');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -21,6 +24,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Conexión a Mongoose.
+mongoose.connect('mongodb://D1360/ecoduino', function(error){
+
+  if(error){
+
+    throw error; 
+
+  }else{
+
+    console.log('Estas super bato crazy party mirrey loco conectado a MongoDB');
+
+  }
+});
+
 
 app.use('/', routes);
 app.use('/users', users);
