@@ -3,26 +3,26 @@ extends layout
 block content
 	h1= title
 	p Welcome to #{title}
-	form( ng-controller="registro", ng-submit="registra()" )
+	form( ng-controller="registroCtrl", ng-submit="registra()" )
 		p Nombre Completo
-		input( type="text", ng-model="nombre" )
+		input( type="text", ng-model="registro.nombre" )
 		br
 		p Curso de interes
-		select( ng-model="curso" )
+		select( ng-model="registro.curso" )
 			option(value="both") Curso de BackEnd y FrontEnd
 			option(value="back") Curso BackEnd
 			option(value="front") Curso FrontEnd
 		br
 		p Edad
-		input( type="text", ng-model="edad" )
+		input( type="text", ng-model="registro.edad" )
 		br
 		p Correo Electronico
-		input( type="email", ng-model="email" )
+		input( type="email", ng-model="registro.email" )
 		br
 		p Telefono de contacto(Celular de preferencia)
-		input( type="text", ng-model="telefono" )
+		input( type="text", ng-model="registro.telefono" )
 		br
 		p Escuela de Procedencia(En caso de que aplique)
-		input( type="text", ng-model="escuela" )
+		input( type="text", ng-model="registro.escuela" )
 		br
 		input( type="submit" )
