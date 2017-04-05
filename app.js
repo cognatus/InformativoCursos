@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Conexión a Mongoose.
-mongoose.connect('mongodb://D1360/ecoduino', function(error){
+mongoose.connect('mongodb://localhost/infoCursos', function(error){
 
   if(error){
 

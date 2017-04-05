@@ -12,11 +12,15 @@
 		var fc = registroFactory;
 		
 		vm.registra = function(){
-			fc.registrar(vm.registro)
-			.success(function(data) {
-			})
-			.error(function(err) {
-			});
+			console.log(vm.registro)
+			fc.registrar(vm.registro).then(
+				function(data) {
+					alert("Furulo");
+				},
+				function(err) {
+					alert("No Furulo");
+				}	
+			);
 		};
 
 	}
