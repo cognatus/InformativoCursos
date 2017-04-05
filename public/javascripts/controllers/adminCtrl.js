@@ -12,8 +12,22 @@
 		var fc = registroFactory;
 
 		vm.alumnos = [];
+		vm.sesion = false;
+
+		vm.loguea = function() {
+			fc.loguearse( vm.user, vm.psw ).then(
+				function(data) {
+					alert(data.data);
+					vm.obten();
+					vm.sesion = true;
+				},
+				function(err) {
+					alert(err.data);
+				}	
+			);
+		}
 		
-		vm.init = function(){
+		vm.obten = function(){
 			fc.getAlumnos().then(
 				function(data) {
 					vm.alumnos = data.data;

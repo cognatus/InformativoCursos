@@ -7,8 +7,18 @@ block content
 
 	h1= title
 	p Welcome to #{title}
-	div( ng-controller="adminCtrl", ng-init="init()" )
-		table
+	div( ng-controller="adminCtrl" )
+
+		form( ng-submit="loguea()", ng-hide="sesion")
+			p User
+			input( type="text", ng-model="user" )
+			br
+			p Password
+			input( type="password", ng-model="psw" )
+			br
+			input( type="submit" )
+
+		table( ng-if="sesion" )
 			tr
 				th Alumno
 				th Curso

@@ -12,7 +12,6 @@
 		var fc = registroFactory;
 		
 		vm.registra = function(){
-			console.log(vm.registro)
 			fc.registrar(vm.registro).then(
 				function(data) {
 					alert("Furulo");

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Alumno = require('../moduls/Alumno');
+var Admin = require('../moduls/Admin');
 
 /* Routes for pages */
 router.get('/', function(req, res, next) {
@@ -28,12 +29,28 @@ router.post('/registrar', function(req, res, next) {
 	});
 });
 
+router.post('/loguearse', function(req, res, next) {
+
+	Admin.find({ user: req.body.user, psw: req.body.psw }, function(err, admin){
+
+		if( err || admin[0] == undefined ){
+
+			console.log(req)
+
+			res.status(405).send('No tienes permiso dude');
+
+		}else{
+			res.status(200).send("furulo");
+		}
+	});
+});
+
 router.get('/obtenerAlumnos', function(req, res, next) {
 	Alumno.find({}, function(err, alumnos){
 		if (err)
 			res.send(err);
 		res.json(alumnos);
-	 });
+	});
 });
 
 
