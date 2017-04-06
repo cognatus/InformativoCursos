@@ -8,18 +8,21 @@
 
 		if ( options.alerts !== undefined ){
 			Object.keys(options.alerts).forEach( function( key, index ) {
-				validation_plugin_defaults.alerts[key] = options.alerts[key];
+				validationPluginDefaults.alerts[key] = options.alerts[key];
 			});
 		}
 		if ( options.style !== undefined ) {
 			Object.keys(options.style).forEach( function( key, index ) {
-				validation_plugin_defaults.style[key] = options.style[key];
+				validationPluginDefaults.style[key] = options.style[key];
 			});
 		}
 		if ( options.mainAlert !== undefined ) { 
-			validation_plugin_defaults.mainAlert = options.mainAlert;
+			validationPluginDefaults.mainAlert = options.mainAlert;
 		}
-		defaults = validation_plugin_defaults;
+		if ( options.onSubmitFail !== undefined ) { 
+			validationPluginDefaults.onSubmitFail = options.onSubmitFail;
+		}
+		defaults = validationPluginDefaults;
 
 		// This function returns true if the input is completely validated validate if is required and validation type
 		function validateField( input ) {
@@ -233,6 +236,7 @@
         		}
 
         		if ( !validationObject.submitValidation ) {
+        			defaults.onSubmitFail();
         			// Send alert if
         			if ( defaults.mainAlert === true ) {
         				alert( defaults.alerts.main );
@@ -436,7 +440,7 @@
 	}
 
 	// this is default
-	var validation_plugin_defaults = {
+	var validationPluginDefaults = {
 		mainAlert: false,
 		alerts: {
 			main: '¡Por favor verifica bien todos los campos antes de enviar!',
@@ -455,7 +459,7 @@
 			zIndex: 0,
 			padding: '4px',
 			background: 'red'
-		}
+		}, onSubmitFail: function() {}
 	}
 
 }(jQuery));
