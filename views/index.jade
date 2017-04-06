@@ -4,29 +4,138 @@ block content
 
 	script( src="/javascripts/factories/registroFactory.js" )
 	script( src="/javascripts/controllers/registroCtrl.js" )
+	.parallax_main
+		.parallax_container
+			.opacity_bg
+			img(src="/images/background.jpg")
 
-	h1= title
-	p Welcome to #{title}
-	form( ng-controller="registroCtrl", ng-submit="registra()" )
-		p Nombre Completo
-		input( type="text", ng-model="registro.nombre" )
-		br
-		p Curso de interes
-		select( ng-model="registro.curso" )
-			option(value="both") Curso de BackEnd y FrontEnd
-			option(value="back") Curso BackEnd
-			option(value="front") Curso FrontEnd
-		br
-		p Edad
-		input( type="text", ng-model="registro.edad" )
-		br
-		p Correo Electronico
-		input( type="email", ng-model="registro.email" )
-		br
-		p Telefono de contacto(Celular de preferencia)
-		input( type="text", ng-model="registro.telefono" )
-		br
-		p Escuela de Procedencia(En caso de que aplique)
-		input( type="text", ng-model="registro.escuela" )
-		br
-		input( type="submit" )
+	h1.super_title Curso de Desarrollo Web
+	.form_container
+		form( ng-controller="registroCtrl", ng-submit="registra()" )
+			.text_field
+				p Nombre Completo
+				input( type="text", ng-model="registro.nombre" placeholder="Nombre Completo")
+			br
+			.text_field
+				p Curso de interes
+				select( ng-model="registro.curso" )
+					option(disabled selected) Elige Curso
+					option(value="both") Curso de BackEnd y FrontEnd
+					option(value="back") Curso BackEnd
+					option(value="front") Curso FrontEnd
+			br
+			.text_field
+				p Edad
+				input( type="text", ng-model="registro.edad" placeholder="Edad" )
+			br
+			.text_field
+				p Correo Electrónico
+				input( type="email", ng-model="registro.email" placeholder="Correo Electrónico")
+			br
+			.text_field
+				p Telefono de contacto (Celular de preferencia)
+				input( type="text", ng-model="registro.telefono" placeholder="Telefono" )
+			br
+			.text_field
+				p Escuela de Procedencia (En caso de que aplique)
+				input( type="text", ng-model="registro.escuela" placeholder="Escuela")
+			br
+			.text_field
+				input( type="submit" )
+
+	.super_padding
+		p.pd_32(style="max-width: 640px;margin: 0 auto;text-align: justify;") Estaremos impartiendo un curso en Startup México para poder ser un Desarrollador Fullstack Javascript, enfocandonos en que al final quienes tomen el curso tengan los conocimientos suficientes en Bases de Datos NoSQL( o no relacionales) con MongoDB, en JavaScript del lado del servidor con Node.Js y Express, crear SPA (Single-Page Applications) con AngularJS, también sobre lo que es necesario saber para crear buen UI(User Interface) y UX(User Experience) y diversas técnicas de desarrollo para Front-End y Back-End, este curso está dividido en dos partes, una donde se enseñara todo al respecto de Front-End y otra de Back-End, está dirigido a gente con pocos conocimientos en programación o que quieran aprender nuevas tecnologías en desarrollo, tiene una duración de un mes con la opción de solo tomar una de las dos mitades del curso ya sea en Back o Front.
+		div(style="text-align: center;")
+			.col_2
+				.pd_32
+					h2.title.mr_bottom_32 Front-End
+					.line
+					br
+					.tem_container
+						h2 UI Design ( CSS )
+						p - ¿Qué es UI Design?
+						p - Tendencias de Diseño
+						p - CSS
+						p - Iconografía e imagen
+						p - Diseño Ajustable a diferentes tamaños de pantalla ( Responsive Design )
+					br
+					.tem_container
+						h2 UX Design
+						p - ¿Qué es UX Design?
+						p - Analisis de Aplicaciones Web mas utilizadas
+						p - Simplicidad, usabilidad e intuitividad en paginas y aplicaciones web
+						p - Iconografía e imagen para experiencia de usuario
+					br
+					.tem_container
+						h2 Javascript enfocado en diseño y animaciones
+						p - Control del DOM con javascript
+						p - Recursividad y buenas practicas
+						.mr_bottom_16
+						h3 jQuery
+						p - Sintaxis del framework
+						p - Uso de jQuery como remplazo de JS puro para ahorrar codigo
+						p - Elementos utilizados en paginas web modernas y ejemplos
+						blockquote
+							p - Carousel de imagenes automático y con botones
+							p - Efecto parallax avanzado
+							p - Ventanas emergentes y pop-ups
+							p - Menu lateral dinamico
+							p - Toolbar dinámico
+							p - Barra de progreso animada
+						p - Creación de plugins con jQuery
+			.col_2
+				.pd_32
+					h2.title.mr_bottom_32 Back-End
+					.line(style="background-color: #673AB7;")
+					br
+					.tem_container
+						h2 Node.Js y Express
+						p - ¿Qué es Node.Js y Express?
+						p - Creacion de servidor y URL’s
+						p - Jade vs HTML
+						p - Creacion de Modulos
+						p - Métodos GET, POST, DELETE y PUT
+						p - Sesiones
+						p - Creación de API REST
+					br
+					.tem_container
+						h2 Bases de Datos NoSQL con MongoDB
+						p - ¿Qué es una DB NoSQL?
+						p - Comandos y Shell de MongoDB
+						p - CRUD (Create, Read, Update, Delete)
+						p - Aggregation Framework
+						p - Implementación con Node.Js
+					br
+					.tem_container
+						h2 AngularJS
+						P - ¿Qué es AngularJS?
+						P - ¿Qué es una SPA?
+						P - Application, Controller, $scopes y Directivas
+						P - Filtros
+						P - Consumo de API’s con $http
+						P - Factories y Services
+						P - Promesas y buenas practicas
+			.col_2
+				.pd_32
+					h2.title.mr_bottom_32 Extras
+					.line(style="background-color: #FFC107;")
+					br
+					.tem_container
+						h2 Desarrollo de proyecto
+						p - Desarrollo de un carrito de compras cubriendo todo el temario
+							b  Teoria-Practica
+					br
+					.tem_container
+						h2 GitHub y Git
+						p - ¿Qúe es GitHub y Git?
+						p - Uso de git y github para versionamiento de proyectos y trabajo en equipo
+						p - Comandos y creación de Ramas
+					br
+					.tem_container
+						h2 AWS (Amazon Web Services)
+						p - Creación de una instancia con AWS
+	script.
+		$('.parallax_container').each(function(index){
+			$(this).parallaxEffect();
+		});
+		

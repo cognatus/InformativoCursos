@@ -5,5 +5,213 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script( src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" )
 		script( src="/javascripts/app.js" )
+		script( src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" )
+		script.
+			(function($) {
+				$.fn.parallaxEffect = function() {
+					var _this = this;
+					var offset_top = this.offset().top;
+					var parent_offset_top = this.parent().offset().top;
+					var parent_height = this.parent().outerHeight();
+					var window_height = $(window).height();
+					var elem_size = parseFloat(parent_height) * 1.15;
+					var diference = elem_size - parent_height;
+
+					_this.parent().css({ 
+						'overflow': 'hidden',
+						'position': 'relative'
+					});
+
+					_this.css({ 
+						'position': 'absolute',
+						'width': '100%',
+						'height': elem_size,
+						'left': 0, 
+						'top': -(diference/2)
+					});
+
+					var min_top = parent_offset_top - window_height; // posicion del padre menos la altura de la ventana
+					var max_top = parent_offset_top + parent_height; // posicion del borde inferion del padre
+
+					var x1 = 0, x2 = 0, y1 = 0, y2 = 0, y = 0, m = 0, x = 0; 
+
+					/*top del parallax para el centro  var1 = -(diference/2);
+					tamaño de la ventana var2 = window_height;
+					altura del padre var3 = parent_height;
+					offset del padre var4 = parent_offset_top; 
+					diferencia entre ventana y altura del padre var5 = ( var2 - var3 )/2;
+					posicion del scroll para el centro var6 = var4 - var5;*/
+
+					y2 = -(diference/2); // posicion1 del cont parallax
+					y1 = parent_height*0.6; // posicion2 del cont parallax
+					if ( parent_offset_top == 0 ){
+						x2 = parent_offset_top;
+					} else {
+						x2 = parent_offset_top - ( ( window_height - parent_height )/2 ); // posicion scroll1
+					}
+					x1 = max_top; // posicion scroll2
+					m = ( y2 - y1 )/( x2 - x1 ); // pendiente
+
+					$(window).scroll( function() {
+						x = $(window).scrollTop();
+
+						if ( x >= min_top && x <= max_top ){
+							y = ( m * ( x - x1 ) ) + y1;
+
+							_this.css({ 'top': y });
+						}
+					});
+				}
+			})(jQuery);
+		style.
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+			* {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 16px;
+				color: #424242;
+			}
+			body {
+				background-color: #FAFAFA;
+				padding: 0;
+				margin: 0;
+				color: #424242;
+				font-family: 'Open Sans', sans-serif;
+			}
+			.parallax_main {
+				height: 410px;
+				overflow: hidden;
+				position: relative;
+			}
+			.parallax_container {
+				height: 100%;
+			} .parallax_container img{
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				filter: blur(2px);
+				-webkit-filter: blur(2px);
+				-ms-filter: blur(2px);
+			}
+			.opacity_bg {
+				background-color: rgba(0,0,0,0.3);
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				z-index: 2;
+			}
+			.super_title {
+				width: auto;
+				padding: 0;
+				font-size: 56px;
+				font-weight: lighter;
+				color: #fff;
+				margin: 48px;
+				margin-top: -220px;
+				margin-bottom: 0;
+				position: relative;
+				z-index: 3;
+			}
+			.form_container {
+				position: relative;
+				width: auto;
+				z-index: 3;
+				margin: 48px;
+				margin-top: 32px;
+				background-color: #607D8B;
+				padding: 32px;
+				max-width: 640px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.36);
+			}
+			.text_field {
+				width: auto;
+			} .text_field p {
+				color: #fff;
+				margin: 0;
+				font-weight: bold;
+				font-size: 15px;
+				margin-bottom: 6px;
+				padding: 0;
+			} .text_field input, .text_field select {
+				padding: 0 16px 0 16px;
+				height: 48px;
+				border-radius: 3px;
+				width: calc(100% - 32px);
+				border: none;
+				box-shadow: 0 0 8px rgba(0,0,0,0.16);
+				background-color: #fff;
+			} .text_field select {
+				width: 100%;
+				text-ident: 12px;
+			} .text_field input[type="submit"] {
+				width: 100%;
+				background-color: #FF5252;
+				border: none;
+				border-radius: 5px;
+				padding: 0;
+				height: 52px;
+				cursor: pointer;
+				color: #fff;
+				font-size: 19px;
+			} .text_field input[type="submit"]:active {
+				border: none;
+			}
+			.line {
+				width: 240px;
+				height: 5px;
+				background-color: #8BC34A;
+				margin: 16px auto;
+				border-radius: 5px;
+			}
+			.title_big {
+				font-size: 46px;
+				margin-bottom: 16px;
+				text-align: center;
+				font-weight: lighter !important;
+			}
+			.title {
+				font-size: 40px;
+				margin-bottom: 16px;
+				text-align: center;
+				font-weight: normal !important;
+			}
+			.title_small {
+				font-size: 19px;
+				font-weight: bold !important;
+			}
+			.mr_bottom_16 {
+				margin-bottom: 16px;
+			}
+			.mr_bottom_32 {
+				margin-bottom: 32px;
+			}
+			.pd_16 {
+				padding: 16px;
+			}
+			.pd_32 {
+				padding: 32px;
+			}
+			.super_padding {
+				padding: 64px;
+			}
+			.col_2 {
+				width: 50%;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.tem_container {
+				text-align: left;
+				margin-bottom: 12px;
+			}
+			.tem_container h2 {
+				font-size: 22px;
+			}
+			.tem_container p, .tem_container h3 {
+				margin: 8px;
+				margin-left: 32px;
+			}
+
 	body( ng-app="aplicacion" )
 		block content
