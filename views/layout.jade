@@ -79,7 +79,7 @@ html
 				font-family: 'Open Sans', sans-serif;
 			}
 			.parallax_main {
-				height: 410px;
+				height: 480px;
 				overflow: hidden;
 				position: relative;
 			}
@@ -103,33 +103,54 @@ html
 				top: 0;
 				z-index: 2;
 			}
+			button.button_info {
+				border: none;
+				background: transparent;
+				border: 2px solid #fff;
+				padding: 0 24px 0 24px;
+				width: auto;
+				height: 64px;
+				font-size: 20px;
+				font-weight: lighter;
+				position: absolute;
+				z-index: 3;
+				bottom: 40px;
+				right: 64px;
+				color: #fff;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+			button.button_info:hover {
+				background-color: #fff;
+				color: #616161;
+				font-weight: normal;
+				box-shadow: 0 0 10px rgba(0,0,0,0.4);
+			}
 			.super_title {
 				width: auto;
 				padding: 0;
-				font-size: 56px;
+				font-size: 52px;
 				font-weight: lighter;
 				color: #fff;
 				margin: 48px;
-				margin-top: -220px;
-				margin-bottom: 0;
 				position: relative;
 				z-index: 3;
+			}
+			.bg_bluegray {
+				background-color: #f9f9f9;
 			}
 			.form_container {
 				position: relative;
 				width: auto;
 				z-index: 3;
-				margin: 48px;
-				margin-top: 32px;
-				background-color: #607D8B;
+				margin: 0 48px 0 48px;
 				padding: 32px;
 				max-width: 640px;
-				box-shadow: 0 0 10px rgba(0,0,0,0.36);
 			}
 			.text_field {
 				width: auto;
 			} .text_field p {
-				color: #fff;
 				margin: 0;
 				font-weight: bold;
 				font-size: 15px;
@@ -141,21 +162,22 @@ html
 				border-radius: 3px;
 				width: calc(100% - 32px);
 				border: none;
-				box-shadow: 0 0 8px rgba(0,0,0,0.16);
+				box-shadow: 0 0 4px rgba(0,0,0,0.16);
 				background-color: #fff;
 			} .text_field select {
 				width: 100%;
 				text-ident: 12px;
 			} .text_field input[type="submit"] {
-				width: 100%;
+				width: auto;
 				background-color: #FF5252;
 				border: none;
 				border-radius: 5px;
-				padding: 0;
+				padding: 0 24px 0 24px;
 				height: 52px;
 				cursor: pointer;
 				color: #fff;
 				font-size: 19px;
+				box-shadow: 0 0 8px rgba(0,0,0,0.24);
 			} .text_field input[type="submit"]:active {
 				border: none;
 			}

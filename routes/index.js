@@ -5,10 +5,10 @@ var Admin = require('../moduls/Admin');
 
 /* Routes for pages */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Cursos Locos' });
+	res.render('index', { title: 'Codea Chido' });
 });
 router.get('/admin', function(req, res, next) {
-	res.render('admin', { title: 'Cursos Locos Admin' });
+	res.render('admin', { title: 'Codea Chido Admin' });
 });
 
 /* API stuff */

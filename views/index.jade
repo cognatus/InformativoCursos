@@ -8,8 +8,12 @@ block content
 		.parallax_container
 			.opacity_bg
 			img(src="/images/background.jpg")
+		button.button_info Registrate aqui
+		h1.super_title codeaChido
 
-	h1.super_title Codea Chido
+	.super_padding
+		p.pd_32(style="max-width: 640px;margin: 0 auto;text-align: justify;") Estaremos impartiendo un curso en Startup México para poder ser un Desarrollador Fullstack Javascript, enfocandonos en que al final quienes tomen el curso tengan los conocimientos suficientes en Bases de Datos NoSQL( o no relacionales) con MongoDB, en JavaScript del lado del servidor con Node.Js y Express, crear SPA (Single-Page Applications) con AngularJS, también sobre lo que es necesario saber para crear buen UI(User Interface) y UX(User Experience) y diversas técnicas de desarrollo para Front-End y Back-End, este curso está dividido en dos partes, una donde se enseñara todo al respecto de Front-End y otra de Back-End, está dirigido a gente con pocos conocimientos en programación o que quieran aprender nuevas tecnologías en desarrollo, tiene una duración de un mes con la opción de solo tomar una de las dos mitades del curso ya sea en Back o Front.
+
 	.form_container
 		form( ng-controller="registroCtrl", ng-submit="registra()" )
 			.text_field
@@ -40,11 +44,10 @@ block content
 				p Escuela de Procedencia (En caso de que aplique)
 				input( type="text", ng-model="registro.escuela" placeholder="Escuela")
 			br
-			.text_field
-				input( type="submit", name="Registrate" )
+			.text_field(style="text-align: right;")
+				input( type="submit", value="Registrarse" )
 
 	.super_padding
-		p.pd_32(style="max-width: 640px;margin: 0 auto;text-align: justify;") Estaremos impartiendo un curso en Startup México para poder ser un Desarrollador Fullstack Javascript, enfocandonos en que al final quienes tomen el curso tengan los conocimientos suficientes en Bases de Datos NoSQL( o no relacionales) con MongoDB, en JavaScript del lado del servidor con Node.Js y Express, crear SPA (Single-Page Applications) con AngularJS, también sobre lo que es necesario saber para crear buen UI(User Interface) y UX(User Experience) y diversas técnicas de desarrollo para Front-End y Back-End, este curso está dividido en dos partes, una donde se enseñara todo al respecto de Front-End y otra de Back-End, está dirigido a gente con pocos conocimientos en programación o que quieran aprender nuevas tecnologías en desarrollo, tiene una duración de un mes con la opción de solo tomar una de las dos mitades del curso ya sea en Back o Front.
 		div(style="text-align: center;")
 			.col_2
 				.pd_32
@@ -83,8 +86,6 @@ block content
 							p - Toolbar dinámico
 							p - Barra de progreso animada
 						p - Creación de plugins con jQuery
-					.pd_16.title $1600
-
 			.col_2
 				.pd_32
 					h2.title.mr_bottom_32 Back-End
@@ -117,8 +118,6 @@ block content
 						P - Consumo de API’s con $http
 						P - Factories y Services
 						P - Promesas y buenas practicas
-					.pd_16.title $1600
-
 			.col_2
 				.pd_32
 					h2.title.mr_bottom_32 Extras
