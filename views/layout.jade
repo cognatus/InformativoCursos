@@ -6,6 +6,7 @@ html
 		script( src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" )
 		script( src="/javascripts/app.js" )
 		script( src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" )
+		script( src="/javascripts/validation-plugin.js" )
 		script.
 			(function($) {
 				$.fn.parallaxEffect = function() {
@@ -215,11 +216,10 @@ html
 				margin: 8px;
 				margin-left: 32px;
 			}
-			iframe {
-				display: inline-block;
-				width: auto;
-				max-width: 600px;
-				height: 420px;
+			.map_container{
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
 			}
 
 	body( ng-app="aplicacion" )

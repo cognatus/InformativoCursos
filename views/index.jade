@@ -9,7 +9,7 @@ block content
 			.opacity_bg
 			img(src="/images/background.jpg")
 
-	h1.super_title Curso de Desarrollo Web
+	h1.super_title Codea Chido
 	.form_container
 		form( ng-controller="registroCtrl", ng-submit="registra()" )
 			.text_field
@@ -83,6 +83,8 @@ block content
 							p - Toolbar dinámico
 							p - Barra de progreso animada
 						p - Creación de plugins con jQuery
+					.pd_16.title $1600
+
 			.col_2
 				.pd_32
 					h2.title.mr_bottom_32 Back-End
@@ -115,6 +117,8 @@ block content
 						P - Consumo de API’s con $http
 						P - Factories y Services
 						P - Promesas y buenas practicas
+					.pd_16.title $1600
+
 			.col_2
 				.pd_32
 					h2.title.mr_bottom_32 Extras
@@ -136,12 +140,14 @@ block content
 						p - Creación de una instancia con AWS
 		.pd_32
 		.pd_32(style="text-align: center;")
-			h1.title.mr_bottom_32 Dirección
+			h1.title_big.mr_bottom_32 Dirección
 			p.title_small.mr_bottom_8 Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
-			iframe(src="https://www.google.com.mx/maps/place/Startup+M%C3%A9xico/@19.4533807,-99.2020018,17z/data=!3m1!4b1!4m5!3m4!1s0x85d2020d52821853:0x8706c1117107b031!8m2!3d19.4533807!4d-99.1998131")
+			.map_container
+				iframe(frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com.mx/maps?q=Startup+México&amp;output=embed" width="100%" height="100%")
 			.pd_16
-			h1.title Horarios
+			h1.title_big Horarios
 			p.title_small Sabado 10:00 a 18:00
+
 	script.
 		$('.parallax_container').each(function(index){
 			$(this).parallaxEffect();
