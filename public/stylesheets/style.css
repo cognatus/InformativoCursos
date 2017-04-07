@@ -80,6 +80,10 @@ button.button_info:hover {
 	background-color: #009688;
 	color: #fff;
 }
+.bg_blue {
+	background-color: #2196F3;
+	color: #fff;
+}
 .upper_shadow {
 	position: relative;
 	z-index: 2;
