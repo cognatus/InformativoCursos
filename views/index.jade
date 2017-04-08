@@ -183,35 +183,35 @@ block content
 					div(style="padding-right: 16px;")
 						.text_field
 							p Nombre Completo
-							input( type="text", ng-model="registro.nombre" placeholder="Nombre Completo")
+							input( type="text", ng-model="registro.nombre" placeholder="Nombre Completo" required-field, validation-type="letters", data-length="min 10")
 						br
 						.text_field
 							p Curso de interes
-							select( ng-model="registro.curso" )
-								option(disabled selected) Elige Curso
+							select( ng-model="registro.curso" required-field )
+								option(disabled selected value="") Elige Curso
 								option(value="both") Curso de BackEnd y FrontEnd
 								option(value="back") Curso BackEnd
 								option(value="front") Curso FrontEnd
 						br
 						.text_field
 							p Edad
-							input( type="text", ng-model="registro.edad" placeholder="Edad" )
+							input( type="text", ng-model="registro.edad" placeholder="Edad" required-field, validation-type="numbers" )
 				.col_2
 					div(style="padding-left: 16px;")
 						.text_field
 							p Correo Electrónico
-							input( type="email", ng-model="registro.email" placeholder="Correo Electrónico")
+							input( type="email", ng-model="registro.email" placeholder="Correo Electrónico" required-field, validation-type="email" )
 						br
 						.text_field
 							p Teléfono de contacto (Celular de preferencia)
-							input( type="text", ng-model="registro.telefono" placeholder="Teléfono" )
+							input( type="text", ng-model="registro.telefono" placeholder="Teléfono" required-field, validation-type="numbers", data-length="8-12" )
 						br
 						.text_field
 							p Escuela de Procedencia (En caso de que aplique)
-							input( type="text", ng-model="registro.escuela" placeholder="Escuela")
+							input( type="text", ng-model="registro.escuela" placeholder="Escuela" data-length="min 5" )
 				.pd_16
-				.text_field(style="text-align: right;")
-					input( type="submit", value="Registrarse" )
+					.text_field(style="text-align: right;")
+						input( type="submit", value="Registrarse" )
 
 	.super_padding.bg_black
 		.title_big Contacto
@@ -225,6 +225,10 @@ block content
 				p diegojmartinezzm@gmail.com
 
 	script.
+		$('form').formValidation({
+			mainAlert: true
+		});
+
 		$('.parallax_container').each( function( index ) {
 			$(this).parallaxEffect();
 		});

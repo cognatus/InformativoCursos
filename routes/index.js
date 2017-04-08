@@ -5,10 +5,10 @@ var Admin = require('../moduls/Admin');
 
 /* Routes for pages */
 router.get('/', function(req, res, next) {
-	res.render('index', { title: 'Codea Chido' });
+	res.render('index', { title: 'codeaChido' });
 });
 router.get('/admin', function(req, res, next) {
-	res.render('admin', { title: 'Codea Chido Admin' });
+	res.render('admin', { title: 'codeaChido Admin' });
 });
 
 /* API stuff */
@@ -20,8 +20,8 @@ router.post('/registrar', function(req, res, next) {
 					curso: req.body.curso,
 					telefono: req.body.telefono,
 					escuela: req.body.escuela
-
 	});
+
 	guardaAlumno.save(function(err, alumno) {
 		if (err)
 			res.send(err);

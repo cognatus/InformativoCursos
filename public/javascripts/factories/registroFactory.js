@@ -17,8 +17,13 @@
 						email: 		datos.email,
 						telefono: 	datos.telefono,
 						escuela: 	datos.escuela
-					}
-				});
+					} 
+				}).then(function successCallback(response) {
+					alert('Registrado con exito');
+					window.location.href = "/";
+				}, function errorCallback(response) {
+					
+				});;
 	    	}
 	    }
 	}

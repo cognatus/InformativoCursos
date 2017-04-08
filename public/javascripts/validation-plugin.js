@@ -361,7 +361,7 @@
 	}
 
 	function validateEmail( variable ) {
-		var patron = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
+		var patron = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z\s]{2,4})$/;
 		return !variable.search(patron);
 	}
 
@@ -448,7 +448,7 @@
 			letters: 'Solo se permiten letras en este campo.',
 			lettersNumbers: 'Solo se permiten numeros y letras en este campo',
 			numbers: 'Solo se permiten numeros en este campo.',
-			email: 'Email invalido.',
+			email: 'Email invalido, verifica que no haya mayusculas ni espacios entre el correo.',
 			price: 'Intoruce un formato valido de precio.',
 			match: 'Las contraseñas no coinciden.',
 			select: 'Elige una opción',
