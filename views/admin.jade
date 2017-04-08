@@ -5,31 +5,57 @@ block content
 	script( src="/javascripts/factories/adminFactory.js" )
 	script( src="/javascripts/controllers/adminCtrl.js" )
 
-	h1= title
-	p Welcome to #{title}
-	div( ng-controller="adminCtrl" )
+	.super_padding
+		h1.title_big= title
+		.pd_16
+		div( ng-controller="adminCtrl" )
+			.form_container(style="max-width: 500px;margin: 0 auto;")
+				form( ng-submit="loguea()", ng-hide="sesion")
+					.text_field
+						p User
+						input( type="text", ng-model="user" placeholder="Usuario" )
+					br
+					.text_field
+						p Password
+						input( type="password", ng-model="psw" placeholder="Contraseña" )
+					br
+					.text_field(style="text-align: right;")
+						input( type="submit", value="Iniciar" )
 
-		form( ng-submit="loguea()", ng-hide="sesion")
-			p User
-			input( type="text", ng-model="user" )
-			br
-			p Password
-			input( type="password", ng-model="psw" )
-			br
-			input( type="submit" )
+			div( ng-if="sesion" )
+				.bg_white.mr_bottom_16.shadow_light( ng-repeat="alumno in alumnos" )
+					.pd_16
+						.text_field.mr_bottom_8
+							b Alumno
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno.nombre}}
+						.text_field.mr_bottom_8
+							b Curso
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno.curso}}
+						.text_field.mr_bottom_8
+							b Telefono
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno.telefono}}
+						.text_field.mr_bottom_8
+							b Email
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno._id}}
+						.text_field.mr_bottom_8
+							b Escuela
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno.escuela}}
+						.text_field.mr_bottom_8
+							b Edad
+							.title.left_text.mr_0.mr_left_16.font_light {{alumno.edad}}
 
-		table( ng-if="sesion" )
-			tr
-				th Alumno
-				th Curso
-				th Telefono
-				th Email
-				th Escuela
-				th Edad
-			tr( ng-repeat=" alumno in alumnos" )
-				td {{alumno.nombre}}
-				td {{alumno.curso}}
-				td {{alumno.telefono}}
-				td {{alumno._id}}
-				td {{alumno.escuela}}
-				td {{alumno.edad}}
+			//- table( ng-if="sesion" )
+			//- 	tr
+			//- 		th Alumno
+			//- 		th Curso
+			//- 		th Telefono
+			//- 		th Email
+			//- 		th Escuela
+			//- 		th Edad
+			//- 	tr( ng-repeat=" alumno in alumnos" )
+			//- 		td {{alumno.nombre}}
+			//- 		td {{alumno.curso}}
+			//- 		td {{alumno.telefono}}
+			//- 		td {{alumno._id}}
+			//- 		td {{alumno.escuela}}
+			//- 		td {{alumno.edad}}
