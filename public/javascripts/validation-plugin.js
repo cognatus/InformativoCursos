@@ -1,5 +1,4 @@
-// Creado por Alejandro Villarroel
-// Sí, esta comentado en ingles porque soy bien mamon :v
+// Created by AlexVanHell
 
 (function ($) {
 	$.fn.formValidation = function( options ) {
@@ -16,15 +15,18 @@
 				validationPluginDefaults.style[key] = options.style[key];
 			});
 		}
-		if ( options.mainAlert !== undefined ) { 
+		if ( options.mainAlert !== undefined ) {
 			validationPluginDefaults.mainAlert = options.mainAlert;
 		}
 		if ( options.onSubmitFail !== undefined ) { 
 			validationPluginDefaults.onSubmitFail = options.onSubmitFail;
 		}
+		if ( options.onSubmitSuccess !== undefined ) { 
+			validationPluginDefaults.onSubmitSuccess = options.onSubmitSuccess;
+		}
 		defaults = validationPluginDefaults;
 
-		// This function returns true if the input is completely validated validate if is required and validation type
+		// This function returns true if the input is completely validated (validate if is required and validation type)
 		function validateField( input ) {
 			var fieldValidated = true;
 			var inputValue = input.val();
@@ -97,7 +99,7 @@
 				}, {
 					name: 'html',
 					functionName: validateHtml(inputValue),
-					defaultMessage: ''
+					defaultMessage: defaults.alerts.html
 				}
 			];
 
@@ -124,14 +126,13 @@
 			if ( status ) {
 				var inputOffset = input.position();
 				var inputHeight = input.outerHeight();
+				var style = '';
+				for( var property in defaults.style ) {
+					style += property + ':' + defaults.style[property] + ';';
+				}
 
-				alertHtml =	'<div class="fvp_validation_alert" style="padding: ' + defaults.style.padding + ' ;background: ' + defaults.style.background + ';position: ' + defaults.style.position + ';z-index: ' + defaults.style.zIndex + ' ;'
-					if ( defaults.style.position === 'absolute' ) {
-						alertHtml += 'top: ' + (inputOffset.top + inputHeight) + ';left: ' + inputOffset.left + ';">'
-					} else {
-						alertHtml += '">'
-					}
-				alertHtml += '<span style="color: #fff;font-size: 14px;">' + message + '</span>'
+				alertHtml =	'<div class="fvp_validation_alert" style="' + style + '">'
+						  + 	'<span style="color: #fff;font-size: 14px;">' + message + '</span>'
 						  +	'</div>';
 
 				input.parent().append(alertHtml);
@@ -169,6 +170,7 @@
         		var hasValidationType = input.attr('validation-type');
         		var hasMatch = input.attr('match-field');
         		var hasLenght = input.attr('data-length');
+        		var hasAlert = input.attr('alert-message');
 
         		var fieldObject = {};
         		fieldObject.isValid = true;
@@ -193,16 +195,19 @@
         				}
         				fieldObject.lengthText += hasLenght.split(' ')[1];
         			}
-        			fieldObject.lengthText += ' caracter(es)';
-        			
+        			fieldObject.lengthText += ' caracter(es)';	
         		}
 
-        		if ( input.is('select') ) {
-        			fieldObject.alertText = defaults.alerts.select;
+        		if ( typeof hasAlert !== typeof undefined ) {
+        			fieldObject.alertText = hasAlert;
         		} else {
-        			if ( typeof hasValidationType != typeof undefined ) {
-        				fieldObject.alertText = getValidation( input, false );
-        			}
+        			if ( input.is('select') ) {
+	        			fieldObject.alertText = defaults.alerts.select;
+	        		} else {
+	        			if ( typeof hasValidationType != typeof undefined ) {
+	        				fieldObject.alertText = getValidation( input, false );
+	        			}
+	        		}
         		}
 
         		validationObject.fields.push( fieldObject );
@@ -210,6 +215,26 @@
         		input.bind('blur change keyup', function( event ) {
         			// Validate field on event
         			initValidation( input, index, event.type );
+        		});
+        	});
+
+        	_this.find(matchTags).each( function() {
+        		var input = $(this);
+
+        		input.bind('blur change keyup', function( event ) {
+					var matchArray = [];
+	        		_this.find(matchTags).each( function( index ) {
+	        			matchArray.push( $(this).val() );
+	        		});
+    				if ( !validateMatch( matchArray ) ) {
+    					validationObject.match = false;
+    					if ( event.type !== 'keyup' ) {
+    						showAlertMessage( true, _this.find(matchTags).eq(_this.find(matchTags).length - 1), defaults.alerts.match );
+    					}
+    				} else {
+    					validationObject.match = true;
+    					showAlertMessage( false, _this.find(matchTags).eq(_this.find(matchTags).length - 1) );
+    				}
         		});
         	});
 
@@ -237,13 +262,13 @@
 
         		if ( !validationObject.submitValidation ) {
         			defaults.onSubmitFail();
-        			// Send alert if
+        			// Send alert if main alert is enabled
         			if ( defaults.mainAlert === true ) {
         				alert( defaults.alerts.main );
         			}
-        			// iterate through each dom.element within var tags
 	        		return false;
         		} else {
+        			defaults.onSubmitSuccess();
         			return true;
         		}
         	});
@@ -253,6 +278,10 @@
         		var hasLenght = input.attr('data-length');
         		var hasMatch = input.attr('match-field');
         		var inputType = input.attr('type');
+
+        		if ( isNaN( index ) ) {
+        			index = _this.find(tags).index( input );
+        		}
 
         		if ( typeof event === typeof undefined ) { event = ''; }
         		showAlertMessage( false, input );
@@ -268,17 +297,6 @@
     						}
     					}
     				}
-    				if ( typeof hasMatch !== typeof undefined ) {
-        				if ( !validateMatch( $(matchTags).eq(0).val() , $(matchTags).eq(1).val() ) ) {
-        					validationObject.match = false;
-        					if ( event !== 'keyup' ) {
-        						showAlertMessage( true, $(matchTags).eq(1), defaults.alerts.match );
-        					}
-        				} else {
-        					validationObject.match = true;
-        					showAlertMessage( false, $(matchTags).eq(1) );
-        				}
-        			}
     			} else {
     				validationObject.fields[index].isValid = false;
     				if ( event !== 'keyup' ) {
@@ -370,8 +388,18 @@
 		return !variable.search(patron);
 	}
 
-	function validateMatch( variable, variable2 ) {
-		return variable === variable2 || ( variable === '' && variable2 === '' );
+	function validateMatch( array ) { // get $(selector).val() array
+		var flag = true;
+		var variable = array[0];
+		for ( var i = 1 ; i < array.length ; i++ ) { 
+			var variable2 = array[i]; // check each element
+			if ( variable2 != variable ) {
+				flag = false;
+				break;
+			}
+		}
+
+		return flag;
 	}
 
 	function validateSelect( variable ) {
@@ -453,13 +481,16 @@
 			match: 'Las contraseñas no coinciden.',
 			select: 'Elige una opción',
 			checkbox: 'Marca este campo para continuar',
-			dateformat: 'Formato de fecha debe ser (dd/mm/aaaa) y ser una fecha valida.'
+			dateformat: 'Formato de fecha debe ser (dd/mm/aaaa) y ser una fecha valida.',
+			html: 'Hay un caracter invalido.'
 		}, style: {
-			position: 'relative',
-			zIndex: 0,
-			padding: '4px',
-			background: 'red'
-		}, onSubmitFail: function() {}
+			'position': 'relative',
+			'z-index': 0,
+			'padding': '4px',
+			'background': 'red'
+		}, 
+		onSubmitFail: function() {},
+		onSubmitSuccess: function() {}
 	}
 
 }(jQuery));
