@@ -10,7 +10,6 @@ var users = require('./routes/users');
 
 var app = express();
 
-
 var mongoose = require('mongoose');
 
 // view engine setup
