@@ -1,7 +1,6 @@
 extends layout
 
 block content
-
 	script( src="/javascripts/factories/registroFactory.js" )
 	script( src="/javascripts/controllers/registroCtrl.js" )
 	.parallax_main
@@ -10,16 +9,18 @@ block content
 			img(src="/images/background.jpg")
 		button#ir_registro.button_info Registrate aqui
 		h1.super_title codeaChido
-			.pd_16(style="max-width: 420px;")
+			.pd_16(style="max-width: 500px;")
 				.pd_16
-				h3.title_small.mr_bottom_32 Aprende Desarrollo Web con JavaScript
-				p(style="font-size: 17px;font-weight: normal") CodeaChido impartirá un curso de Desarrollo Web para que quienes tomen el curso tengan los conocimientos necesario para crear una página web y conectar esta a una Base de Datos.
+				h2.title_medium.mr_bottom_32 Codea bien chido, con codeaChido ;)
+				p(style="font-size: 17px;font-weight: normal") 
+					| codeaChido es una iniciativa sobre Cursos de Desarrollo de Software, trabajamos de primera mano con emprendedores al rededor de México y con las mejores escuelas del país. 
+					| Si eres un estudiante, emprendedor o simplemente tienes ganas de aprender, codeaChido es la opción para que te pongas a codear como pro!
 
 	.super_padding
 		div(style="max-width: 640px;margin: 0 auto;text-align: justify;")
 			.pd_16
 			h1.title_big Sé un desarrollador FullStack Javascript
-			p.pd_32 El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes ya que para estas personas daremos una regularización una semana antes de empezar.
+			p.pd_32 El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, pronto tendremos un curso para empezar a codear desde 0 ;)
 
 	.super_padding
 		.center_text
@@ -38,8 +39,8 @@ block content
 					.tem_container
 						h2 UX Design
 						p - ¿Qué es UX Design?
-						p - Analisis de Aplicaciones Web mas utilizadas
-						p - Simplicidad, usabilidad e intuitividad en paginas y aplicaciones web
+						p - Análisis de Aplicaciones Web mas utilizadas
+						p - Simplicidad, usabilidad e intuitividad en páginas y aplicaciones web
 						p - Iconografía e imagen para experiencia de usuario
 				.col_2
 					.tem_container
@@ -78,9 +79,9 @@ block content
 					.tem_container
 						h2 Node.Js y Express
 						p - ¿Qué es Node.Js y Express?
-						p - Creacion de servidor y URL’s
+						p - Creación de servidor y URL’s
 						p - Jade vs HTML
-						p - Creacion de Modulos
+						p - Creación de Modulos
 						p - Métodos GET, POST, DELETE y PUT
 						p - Sesiones
 						p - Creación de API REST
@@ -124,7 +125,7 @@ block content
 					br
 					.tem_container
 						h2 GitHub y Git
-						p - ¿Qúe es GitHub y Git?
+						p - ¿Qué es GitHub y Git?
 						p - Uso de git y github para versionamiento de proyectos y trabajo en equipo
 						p - Comandos y creación de Ramas
 					br
@@ -141,42 +142,39 @@ block content
 						img.icon_img(src="/images/icons/amazon-clouddrive.png")
 				.pd_16
 	.super_padding.bg_indigo.font_color_white
-		h1.title_big.mr_bottom_32 Precios
+		h1.title_big.mr_bottom_32 Precio
 		.line(style="background-color: #fff;")
 		br
 		div(style="text-align: center")
 			.col_2
-				.pd_32
-					h3.title_small.mr_bottom_8 Curso Individual
-					h2.title_big $1600.00 MXN
-			.col_2
-				.pd_32
-					h3.title_small.mr_bottom_8 Ambos Cursos
-					h2.title_big $2200.00 MXN
+				.pd_16
+					h2.title_big $3000.00 MXN
 			div.mr_bottom_16
 				.pd_32
 					h3.title_small.mr_bottom_8 Para apartar un lugar:
-					h2.title $1000.00 MXN
+					h2.title $1250.00 MXN
 			div(style="text-align: left;")
-				h2.title_small.mr_bottom_8 Contado: 
-				p 1 Curso $1400.00 MXN 
-				p Ambos Cursos $1900.00 MXN
+				h2.title_small.mr_bottom_8 Contado:
+				p.mr_bottom_16 $2700.00 MXN
+				p *Precios sujetos a cambios, información para el pago favor de contactarnos
 	.super_padding(style="text-align: center;")
-		h1.title_big.mr_bottom_32 Dirección
+		h1.title_big.mr_bottom_32 Dirección (Sujeta a cambios)
 		p.title_small.mr_bottom_8 Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
 		h3.title Startup México
 		.map_container
 			iframe(width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Startup+México&output=embed")
 
 	.super_padding.bg_blue
-		h1.title_big Inicio
+		h1.title_big Horarios
+		.pd_8
 		.center_text
-			.pd_16
-			p.title_small Sabado 29 de Abril, 10:00 a 18:00
+			p.title_small.mr_bottom_16 Fecha de Inicio: 10 de Julio 2017
+			p.title_small.mr_bottom_8 Lunes a Jueves de 10:00 a 14:00 hrs
+			p.title_small 48 hrs de curso
 
 	#registro.super_padding
 		.form_container
-			.title_big Registrate aqui
+			.title_big Regístrate aquí
 			.pd_32
 			form( ng-controller="registroCtrl", ng-submit="registra()" )
 				.col_2
@@ -190,8 +188,7 @@ block content
 							select( ng-model="registro.curso" required-field )
 								option(disabled selected value="") Elige Curso
 								option(value="both") Curso de BackEnd y FrontEnd
-								option(value="back") Curso BackEnd
-								option(value="front") Curso FrontEnd
+								option(value="cero") Curso de Programacion desde 0
 						br
 						.text_field
 							p Edad
@@ -223,19 +220,3 @@ block content
 			.col_2
 				p.mr_bottom_8 55 1728 6341
 				p diegojmartinezzm@gmail.com
-
-	script.
-		$('form').formValidation({
-			mainAlert: true
-		});
-
-		$('.parallax_container').each( function( index ) {
-			$(this).parallaxEffect();
-		});
-
-		$('#ir_registro').click( function() {
-			$('body').animate({
-				'scrollTop': jQuery('#registro').offset().top
-			}, 1200);
-		});
-		

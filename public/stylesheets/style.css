@@ -13,7 +13,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 .parallax_main {
-	height: 480px;
+	height: 520px;
 	overflow: hidden;
 	position: relative;
 }
@@ -155,9 +155,13 @@ button.button_info:hover {
 	text-align: center;
 	font-weight: normal !important;
 }
+.title_medium {
+	font-size: 25px;
+	font-weight: bold !important;
+}
 .title_small {
 	font-size: 21px;
-	font-weight: bold !important;
+	font-weight: normal !important;
 }
 .mr_0 {
 	margin: 0;
@@ -173,6 +177,9 @@ button.button_info:hover {
 }
 .mr_bottom_32 {
 	margin-bottom: 32px;
+}
+.pd_8 {
+	padding: 8px;
 }
 .pd_16 {
 	padding: 16px;
