@@ -2,26 +2,26 @@ extends layout
 
 block content
 	.parallax_main
+		.opacity_bg
 		.parallax_container
-			.opacity_bg
 			img(src="/images/background.jpg")
-		button#ir_registro.button_info Registrate aqui
-		h1.super_title codeaChido
-			.pd_16(style="max-width: 500px;")
+		.super_title 
+			h1 codeaChido
+			.intro
 				.pd_16
 				h2.title_medium.mr_bottom_32 Codea bien chido, con codeaChido ;)
-				p(style="font-size: 17px;font-weight: normal; text-align: justify") 
+				p 
 					| codeaChido es una iniciativa sobre Cursos de Desarrollo de Software, trabajamos de primera mano con emprendedores al rededor de México y con las mejores escuelas del país. 
 					| Si eres un estudiante, emprendedor o simplemente tienes ganas de aprender, codeaChido es la opción para que te pongas a codear como pro!
-
+		div.button_container
+			button#ir_registro.button_info Registrate aqui
 	.super_padding
-		div(style="max-width: 640px;margin: 0 auto;text-align: justify;")
+		div.max_w
 			.pd_16
-			h1.title_big Sé un desarrollador FullStack Javascript
-			p.pd_32 El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, pronto tendremos un curso para empezar a codear desde 0 ;)
-
+			h1.title_big.center_text Sé un desarrollador FullStack Javascript
+			p El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, pronto tendremos un curso para empezar a codear desde 0 ;)
 	.super_padding
-		.center_text
+		.center_text.max_w2
 			section
 				h2.title.mr_bottom_32 Front-End
 				.line
@@ -50,7 +50,7 @@ block content
 						p - Sintaxis del framework
 						p - Uso de jQuery como remplazo de JS puro para ahorrar codigo
 						p - Elementos utilizados en paginas web modernas y ejemplos
-						blockquote(style="padding-left: 32px;")
+						blockquote
 							p - Carousel de imagenes automático y con botones
 							p - Efecto parallax avanzado
 							p - Ventanas emergentes y pop-ups
@@ -68,10 +68,10 @@ block content
 						img.icon_img(src="/images/icons/language-javascript.png")
 					.col_4
 						img.icon_img(src="/images/icons/material-ui.png")
-				.pd_32.mr_bottom_32
+				.resp_space
 			section
 				h2.title.mr_bottom_32 Back-End
-				.line(style="background-color: #673AB7;")
+				.line.bg_indigo
 				br
 				.col_2
 					.tem_container
@@ -110,11 +110,11 @@ block content
 						img.icon_img(src="/images/icons/angular.png")
 					.col_4
 						img.icon_img(src="/images/icons/json.png")
-				.pd_32.mr_bottom_32
+				.resp_space
 			section
-				.pd_32
+				.col_2
 					h2.title.mr_bottom_32 Extras
-					.line(style="background-color: #FFC107;")
+					.line.bg_yellow
 					br
 					.tem_container
 						h2 Desarrollo de proyecto
@@ -138,45 +138,41 @@ block content
 						img.icon_img(src="/images/icons/git.png")
 					.col_4
 						img.icon_img(src="/images/icons/amazon-clouddrive.png")
-				.pd_16
+				.resp_space
 	.super_padding.bg_indigo.font_color_white
-		h1.title_big.mr_bottom_32 Precio
-		.line(style="background-color: #fff;")
-		br
-		div(style="text-align: center")
+		h1.title_big.mr_bottom_32.center_text Precio
+		.line.bg_white
+		div.center_text
 			.col_2
+				.pd_8
 				.pd_16
-					h2.title_big $3000.00 MXN
-			div.mr_bottom_16
-				.pd_32
+					h2.title_big.center_text $3000.00 MXN
+			div.mr_bottom_40
+				div
 					h3.title_small.mr_bottom_8 Para apartar un lugar:
 					h2.title $1250.00 MXN
-			div(style="text-align: left;")
+			div.left_text
 				h2.title_small.mr_bottom_8 Contado:
 				p.mr_bottom_16 $2700.00 MXN
 				p *Precios sujetos a cambios, información para el pago favor de contactarnos
-	.super_padding(style="text-align: center;")
-		h1.title_big.mr_bottom_32 Dirección (Sujeta a cambios)
-		p.title_small.mr_bottom_8 Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
+	.super_padding.center_text
+		h1.title_big.mr_bottom_32.center_text Dirección
+		p.title_small.mr_bottom_16 Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
 		h3.title Startup México
 		.map_container
 			iframe(width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Startup+México&output=embed")
-
 	.super_padding.bg_blue
-		h1.title_big Horarios
-		.pd_8
+		h1.title_big.center_text.mr_bottom_24 Horarios
 		.center_text
 			p.title_small.mr_bottom_16 Fecha de Inicio: 10 de Julio 2017
 			p.title_small.mr_bottom_8 Lunes a Jueves de 10:00 a 14:00 hrs
 			p.title_small 48 hrs de curso
-
 	#registro.super_padding
 		.form_container
-			.title_big Regístrate aquí
-			.pd_32
-			form( ng-controller="registroCtrl", ng-submit="registra()" )
+			h1.title_big.center_text.mr_bottom_40 Regístrate aquí
+			form.max_w2( ng-controller="registroCtrl", ng-submit="registra()" )
 				.col_2
-					div(style="padding-right: 16px;")
+					div.left_fields
 						.text_field
 							p Nombre Completo
 							input( type="text", ng-model="registro.nombre" placeholder="Nombre Completo" required-field, validation-type="letters", data-length="min 10")
@@ -192,7 +188,7 @@ block content
 							p Edad
 							input( type="text", ng-model="registro.edad" placeholder="Edad" required-field, validation-type="numbers" )
 				.col_2
-					div(style="padding-left: 16px;")
+					div.right_fields
 						.text_field
 							p Correo Electrónico
 							input( type="email", ng-model="registro.email" placeholder="Correo Electrónico" required-field, validation-type="email" )
@@ -207,18 +203,16 @@ block content
 				.pd_16
 				.text_field(style="text-align: right;")
 					input( type="submit", value="Registrarse" )
-
 	.super_padding.bg_black
-		.title_big Contacto
+		.title_big.center_text.mr_bottom_24 Contacto
 		.pd_16
-		.pd_32.center_text(style="padding-bottom: 0;")
-			.col_2
+		.center_text
+			.col_2.mr_bottom_32
 				p.mr_bottom_8 55 4699 8574
 				p alejandrodnl.cv@hotmail.com
 			.col_2
 				p.mr_bottom_8 55 1728 6341
-				p diegojmartinezzm@gmail.com
-				
+				p diegojmartinezzm@gmail.com		
 	script( src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" )
 	script( src="/javascripts/app.js" )
 	script( src="/javascripts/factories/registroFactory.js" )
@@ -283,17 +277,9 @@ block content
 				}
 			})(jQuery);
 	script.
-			$('form').formValidation({
-				mainAlert: true
-			});
-
-			$('.parallax_container').each( function( index ) {
-				$(this).parallaxEffect();
-			});
-
+			$('form').formValidation({ mainAlert: true });
+			$('.parallax_container').each( function( index ) { $(this).parallaxEffect(); });
 			$('#ir_registro').click( function() {
-				$('body').animate({
-					'scrollTop': jQuery('#registro').offset().top
-				}, 1200);
+				$('body').animate({ 'scrollTop': jQuery('#registro').offset().top }, 1200); 
 			});
 
