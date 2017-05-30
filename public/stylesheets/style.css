@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800";
 *{font-family:'Open Sans',sans-serif;padding:0;margin:0}
 body{background-color:#FAFAFA;padding:0;margin:0;color:#424242;font-size:17px;font-family:'Open Sans',sans-serif}
+.font_big{font-size: 20px}
 .parallax_main{height:auto;overflow:hidden;position:relative;background-color:#000}
 .parallax_container{height:100%}
 .parallax_container img{height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
@@ -65,6 +66,7 @@ img.icon_img{width:64px;height:auto;opacity:.5}
 .super_title .intro{text-align:justify}
 }
 @media screen and (min-width: 768px) {
+.font_big{font-size: 22px}
 .title_big{font-size:40px}
 .title{font-size:36px}
 .title_medium{font-size:32px}

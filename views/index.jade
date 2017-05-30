@@ -18,8 +18,8 @@ block content
 	.super_padding
 		div.max_w
 			.pd_16
-			h1.title_big.center_text Sé un desarrollador FullStack Javascript
-			p El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, pronto tendremos un curso para empezar a codear desde 0 ;)
+			h1.title_big.center_text.mr_bottom_24 Sé un desarrollador FullStack Javascript
+			p.font_big El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente (FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor (BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, pronto tendremos un curso para empezar a codear desde 0 ;)
 	.super_padding
 		.center_text.max_w2
 			section
@@ -219,37 +219,9 @@ block content
 	script( src="/javascripts/factories/registroFactory.js" )
 	script( src="/javascripts/controllers/registroCtrl.js" )
 	script( src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" )
-	script( src="/javascripts/validation-plugin.js" )
+	script( src="/javascripts/validation-plugin.min.js" )
 	script.
-		(function($){
-			$.fn.parallaxEffect=function(){
-				var _this=this;
-				var offset_top=this.offset().top;
-				var parent_offset_top=this.parent().offset().top;
-				var parent_height=this.parent().outerHeight();
-				var window_height=$(window).height();
-				var elem_size=parseFloat(parent_height) * 1.15;
-				var diference=elem_size - parent_height;
-				_this.parent().css({'overflow':'hidden','position':'relative'});
-				_this.css({'position':'absolute','width':'100%','height':elem_size,'left':0,'top':-(diference/2)});
-				var min_top=parent_offset_top - window_height;
-				var max_top=parent_offset_top + parent_height;
-				var x1=0, x2=0, y1=0, y2=0, y=0, m=0, x=0;
-				y2=-(diference/2);
-				y1=parent_height*0.6;
-				if (parent_offset_top == 0){x2=parent_offset_top;}
-				else{x2=parent_offset_top-((window_height-parent_height)/2);}
-				x1=max_top;
-				m=(y2-y1)/(x2-x1);
-				$(window).scroll(function(){
-					x=$(window).scrollTop();
-					if (x>=min_top && x<=max_top){
-						y=(m*(x-x1))+y1;
-						_this.css({'top':y});
-					}
-				});
-			}
-		})(jQuery);
+		!function(t){t.fn.parallaxEffect=function(){var o=this,i=(this.offset().top,this.parent().offset().top),e=this.parent().outerHeight(),s=t(window).height(),n=1.15*parseFloat(e),r=n-e;o.parent().css({overflow:"hidden",position:"relative"}),o.css({position:"absolute",width:"100%",height:n,left:0,top:-r/2});var a=i-s,f=i+e,p=0,h=0,l=0,c=0,w=0;c=(-r/2-(h=.6*e))/((0==i?i:i-(s-e)/2)-(p=f)),t(window).scroll(function(){(w=t(window).scrollTop())>=a&&w<=f&&(l=c*(w-p)+h,o.css({top:l}))})}}(jQuery);
 	script.
 		$('form').formValidation({mainAlert: true});
 		$('.parallax_container').each(function(index){$(this).parallaxEffect();});
