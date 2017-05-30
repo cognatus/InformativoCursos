@@ -1,7 +1,1 @@
-(function() {
-	'use strict';
-
-	angular
-		.module('aplicacion', []);
-		
-})();
+!function(){"use strict";angular.module("aplicacion",[])}();
