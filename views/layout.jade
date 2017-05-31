@@ -2,6 +2,8 @@ doctype html
 html
 	head
 		title= title
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, maximum-scale=1.0 user-scalable=no')
 		meta( name="description", content="codeaChido es una iniciativa sobre Cursos de Desarrollo de Software, trabajamos de primera mano con emprendedores al rededor de México y con las mejores escuelas del país. Si eres un estudiante, emprendedor o simplemente tienes ganas de aprender, codeaChido es la opción para que te pongas a codear como pro!" )
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script.
@@ -11,6 +13,5 @@ html
 			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 			ga('create', 'UA-86044758-2', 'auto');
 			ga('send', 'pageview');
-		
 	body( ng-app="aplicacion" )
 		block content
