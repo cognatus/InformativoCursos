@@ -2,240 +2,245 @@ extends layout
 
 block content
 
+	header
+		nav#navbar.navbar.navbar-expand-lg.navbar-dark.fixed-top.scrolling-navbar
+			.container
+				a.navbar-brand(href='#')
+					strong codeaChido
+				button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarContent', aria-controls='navbarContent', aria-expanded='false', aria-label='Toggle navigation')
+					span.navbar-toggler-icon
+				#navbarContent.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto
+						li.nav-item
+							a.nav-link.active(href='#curso') El curso
+						li.nav-item
+							a.nav-link(href='#temario') Temario
+						li.nav-item
+							a.nav-link(href='#precio') Precio
+						li.nav-item
+							a.nav-link(href='#donde') Dónde
+					a.btn.btn-primary.btn-rounded.my-0(href='#registro') Registrarme
+		section#intro.view.hm-gradient
+			.full-bg-img.d-flex.align-items-center
+				.container
+					.row.no-gutters
+						.col-md-10.col-lg-6.text-center.text-md-left.margins
+							.white-text.intro_text
+								.wow.fadeInLeft(data-wow-delay='0.3s')
+									h1.h1-responsive.font-bold.mt-sm-5 Codea bien chido, con codeaChido ;)
+									.h6
+										| codeaChido es una iniciativa sobre Cursos de Desarrollo de Software, trabajamos de primera mano con emprendedores al rededor de México y con las mejores escuelas del país. Si eres un estudiante, emprendedor o simplemente tienes ganas de aprender, codeaChido es la opción para que te pongas a codear como pro!
+								br
+								.wow.fadeInLeft(data-wow-delay='0.3s')
+									a.btn.btn-white.dark-grey-text.font-bold.ml-0(href='#registro', target='_blank') Registrarse
+									a.btn.btn-outline-white(href='#') Ver más
+	#content
+		section#curso.text-center.py-5.grey.lighten-4
+			.container
+				.wow.fadeIn
+					h2.h1.pt-5.pb-3 Aprende Desarrollo FullStack JavaScript
+					p.px-5.mb-5.pb-3.lead.blue-grey-text
+						| El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente (FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor (BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes, muy pronto tendremos un curso para empezar a codear desde 0 ;)
+		section#temario.py-5
+			.container
+				.wow.fadeIn
+					h2.text-center.h1.my-4 Front-End
+				.row.wow.fadeInLeft(data-wow-delay='.3s')
+					.col-lg-6.col-xl-5.pr-lg-5.pb-5
+						img.img-fluid.rounded.z-depth-2(src='img/frontend.jpg', alt='project image')
+					.col-lg-6.col-xl-7.pl-lg-5.pb-4
+						.row.mb-3
+							.col-2.mr-2
+								img.img-fluid.rounded(src='img/material-ui.png', alt='UX/UI')
+							.col-9
+								h5.font-bold UX/UI
+								p.grey-text
+									| Aprenderás las últimas tendencias de diseño así como la simplicidad, usabilidad e intuitividad que se debe seguir en paginas web.
+						.row.mb-3
+							.col-2.mr-2
+								img.img-fluid.rounded(src='img/language-javascript.png', alt='JavaScript')
+							.col-9
+								h5.font-bold Javascript enfocado en diseño y animaciones
+								p.grey-text
+									| Veras el uso del DOM con JavaScript así como buenas prácticas y el uso de jQuery para ahorrar código y la creación de animaciones de sitios modernos.
+						.row
+							.col-2.mr-2
+								img.img-fluid.rounded(src='img/angular.png', alt='AngularJS')
+							.col-9
+								h5.font-bold AngularJS
+								p.grey-text
+									| Descubrirás los múltiples usos de uno de los frameworks más populares y usados hoy en día por varias empresas, aprendiendo desde lo que es un scope hasta consumir servicios.
+				hr
+				.wow.fadeIn
+					h2.text-center.h1.my-4 Back-End
+				.row.pt-5.wow.fadeInRight(data-wow-delay='.3s')
+					.col-lg-6.col-xl-7.mb-3
+						.row.mb-3
+							.col-2.mr-2
+								img.img-fluid.rounded(src='img/nodejs.png', alt='NodeJS')
+							.col-9
+								h5.font-bold NodeJS
+								p.grey-text
+									| Siendo uno de los más poderosos y confiables, NodeJS ha ganado terreno en la industria debido a su rapidez y gran capacidad para manejar gran cantidad de peticiones, también lo aprenderás aquí!
+						.row.mb-3
+							.col-2.mr-2
+								img.img-fluid.rounded(src='img/dbs_mongodb.png', alt='MongoDB')
+							.col-9
+								h5.font-bold MongoDB
+								p.grey-text
+									| Aventurate a ver lo que es una base de datos no relacional (o noSQL) con el preferido de muchas empresas y desarrolladores que optan por usar nuevas tecnologías, deja de normalizar y empieza a desnormalizar(Dah! XD).
+					.col-lg-6.col-xl-5.mb-3
+						img.img-fluid.rounded.z-depth-2(src='img/backend.jpg', alt='project image')
+				hr
+				.wow.fadeIn
+					h2.text-center.h1.my-4 Extras
+				.row.wow.fadeInLeft(data-wow-delay='.3s')
+					.col-lg-6.col-xl-5.pr-lg-5.pb-5
+						img.img-fluid.rounded.z-depth-2(src='img/extra.jpg', alt='project image')
+					.col-lg-6.col-xl-7.pl-lg-5.pb-4
+						.row.mb-3
+							.col-1.mr-1
+								img.img-fluid.rounded(src='img/github-circle.png', alt='GitHub')
+							.col-10
+								h5.font-bold Git y GitHub
+								p.grey-text
+									| Empieza a trabajar en equipo versionando y compartiendo tus avances usando sin la tediosa tarea de tener que estar creando varias carpetas o usar una USB.
+						.row.mb-3
+							.col-1.mr-1
+								img.img-fluid.rounded(src='img/amazon-clouddrive.png', alt='AWS')
+							.col-10
+								h5.font-bold AWS
+								p.grey-text
+									| Ve como puedes hacer subir tu pagina web a internet para compartirlos con todo el mundo.
+		section#precio.text-center.py-5.indigo.darken-1.text-white
+			.container
+				.wow.fadeIn
+					h2.h1.pt-5.pb-3 Precio
+					p.px-5.mb-5.pb-3.lead
+						| Puedes elegir tomar un solo curso o ambos así como la manera de pagarlo, para mayor informacion respecto al pago favor de contactarnos directamente.
+				.row.wow.zoomIn
+					.col-lg-1.col-md-12.mb-r
+						.card.card-image
+					.col-lg-4.col-md-12.mb-r
+						.card.card-image
+							.text-white.text-center.pricing-card.d-flex.align-items-center.rgba-teal-strong.py-3.px-3.rounded
+								.card-body
+									.h5 Un curso
+									.py-5
+										sup.display-4 $
+										span.display-1 2,100
+									ul.list-unstyled
+										li
+											p
+												| Curso Back-End 
+												b o
+												|  Front-End
+										li
+											p Extras incluidos
+										li
+											p
+												| Por pago de contado 
+												b $ 1,900
+									a.btn.btn-outline-white.mt-5(href='#registro') Registrate
+					.col-lg-2.col-md-12.mb-r
+						.card.card-image
+					.col-lg-4.col-md-12.mb-r
+						.card.card-image
+							.text-white.text-center.pricing-card.d-flex.align-items-center.rgba-red-strong.py-3.px-3.rounded
+								.card-body
+									.h5 Ambos cursos
+									.py-5
+										sup.display-4 $
+										span.display-1 2,500
+									ul.list-unstyled
+										li
+											p
+												| Curso Back-End 
+												b y
+												|  Front-End
+										li
+											p Extras incluidos
+										li
+											p Reconocimiento por asistencia
+										li
+											p
+												| Por pago de contado 
+												b $ 2,200
+									a.btn.btn-outline-white.mt-5(href='#registro') Registrate
+					.col-lg-1.col-md-12.mb-r
+						.card.card-image
+		section#donde.py-5
+			.container
+				.wow.fadeIn
+					h2.h1.pt-5.pb-3.text-center Dónde?
+					h3.h2.pt-4.pb-2.text-center Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
+					h4.h4.pt-3.pb-1.text-center Startup México
+					.map_container
+						iframe(width='100%', height='250px', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='https://maps.google.com/maps?q=Startup+México&output=embed')
+		section#registro
+			.rgba-black-strong.py-5.intro_text
+				.container
+					.wow.fadeIn
+						h2.h1.text-white.pt-5.pb-3.text-center Registro
+						p.text-white.px-5.mb-5.pb-3.lead.text-center
+							| Para registrarse a cualquiera de los cursos o en caso de que quieras informacion, realiza el registro y te contactaremos en la mayor brevedad posible.
+					.card.mb-5.wow.fadeInUp.registro_content(data-wow-delay='.4s')
+						.card-body.p-5
+							.row
+								.col-md-8
+									form(ng-controller="registroCtrl", ng-submit="registra()")
+										.row
+											.col-md-6
+												.md-form
+													input#name.form-control(ng-model="registro.nombre", type='text', name='name', required='required', validation-type="letters", data-length="min 10")
+													label(for='name') Nombre Completo
+											.col-md-6
+												.md-form
+													input#email.form-control(ng-model="registro.email", type='text', name='_replyto', required='required')
+													label(for='email', validation-type="email") Email
+										.row
+											.col-md-6
+												.md-form
+													select#curso.form-control(ng-model="registro.curso", name='curso', required-field='')
+														option(disabled='', selected='', value='')  Elige Curso 
+														option(value='both')  Curso de BackEnd y FrontEnd 
+														option(value='back')  Curso BackEnd 
+														option(value='front')  Curso FrontEnd 
+											.col-md-6
+												.md-form
+													input#telefono.form-control(ng-model="registro.telefono", type='text', name='telefono', required='required', data-length="8-12")
+													label(for='telefono', validation-type="numbers") Telefono
+										.row
+											.col-md-6
+												.md-form
+													input#edad.form-control(ng-model="registro.edad", type='text', name='edad', required='required')
+													label(for='edad', validation-type="numbers") Edad
+											.col-md-6
+												.md-form
+													input#escuela.form-control(ng-model="registro.escuela", type='text', name='escuela', required='required', placeholder="Escuela" data-length="min 5")
+													label(for='escuela') Escuela (En caso de que aplique)
+										.center-on-small-only.mb-4
+											button.btn.btn-indigo.ml-0(type='submit')
+												i.fa.fa-paper-plane-o.mr-2
+												|  Registrarse
+								.col-md-4
+									ul.list-unstyled.text-center
+										li.mt-4
+											i.fa.fa-phone.indigo-text.fa-2x
+											p.mt-2.black-text 55 1728 6341
+										li.mt-4
+											i.fa.fa-envelope.indigo-text.fa-2x
+											p.mt-2.black-text diegojmartinezzm@codeachido.com
+	script(type='text/javascript', src='js/jquery-3.2.1.min.js')
+	script( src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" )
+	script( src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" )
+	script( src="/javascripts/app.js" )
 	script( src="/javascripts/factories/registroFactory.js" )
 	script( src="/javascripts/controllers/registroCtrl.js" )
-	.parallax_main
-		.parallax_container
-			.opacity_bg
-			img(src="/images/background.jpg")
-		button#ir_registro.button_info Registrate aqui
-		h1.super_title codeaChido
-			.pd_16(style="max-width: 420px;")
-				.pd_16
-				h3.title_small.mr_bottom_32 Aprende Desarrollo Web con JavaScript
-				p(style="font-size: 17px;font-weight: normal") CodeaChido impartirá un curso de Desarrollo Web para que quienes tomen el curso tengan los conocimientos necesario para crear una página web y conectar esta a una Base de Datos.
-
-	.super_padding
-		div(style="max-width: 640px;margin: 0 auto;text-align: justify;")
-			.pd_16
-			h1.title_big Sé un desarrollador FullStack Javascript
-			p.pd_32 El curso se divide en dos partes, una donde aprenderás lo necesario para desarrollar del lado del cliente(FrontEnd) y otra donde verás la parte de desarrollo del lado de servidor(BackEnd). Los cursos están dirigidos para aquellas personas con pocos conocimientos en programación o para aquellas que quieran aprender nuevas tecnologías, igualmente si no sabes programar no te preocupes ya que para estas personas daremos una regularización una semana antes de empezar.
-
-	.super_padding
-		.center_text
-			section
-				h2.title.mr_bottom_32 Front-End
-				.line
-				br
-				.col_2
-					.tem_container
-						h2 UI Design ( CSS )
-						p - ¿Qué es UI Design?
-						p - Tendencias de Diseño
-						p - CSS
-						p - Iconografía e imagen
-						p - Diseño Ajustable a diferentes tamaños de pantalla ( Responsive Design )
-					.tem_container
-						h2 UX Design
-						p - ¿Qué es UX Design?
-						p - Analisis de Aplicaciones Web mas utilizadas
-						p - Simplicidad, usabilidad e intuitividad en paginas y aplicaciones web
-						p - Iconografía e imagen para experiencia de usuario
-				.col_2
-					.tem_container
-						h2 Javascript enfocado en diseño y animaciones
-						p - Control del DOM con javascript
-						p - Recursividad y buenas practicas
-						.mr_bottom_16
-						h3 jQuery
-						p - Sintaxis del framework
-						p - Uso de jQuery como remplazo de JS puro para ahorrar codigo
-						p - Elementos utilizados en paginas web modernas y ejemplos
-						blockquote(style="padding-left: 32px;")
-							p - Carousel de imagenes automático y con botones
-							p - Efecto parallax avanzado
-							p - Ventanas emergentes y pop-ups
-							p - Menu lateral dinamico
-							p - Toolbar dinámico
-							p - Barra de progreso animada
-						p - Creación de plugins con jQuery
-				.pd_32
-				.center_text
-					.col_4
-						img.icon_img(src="/images/icons/language-html5.png")
-					.col_4
-						img.icon_img(src="/images/icons/language-css3.png")
-					.col_4
-						img.icon_img(src="/images/icons/language-javascript.png")
-					.col_4
-						img.icon_img(src="/images/icons/material-ui.png")
-				.pd_32.mr_bottom_32
-			section
-				h2.title.mr_bottom_32 Back-End
-				.line(style="background-color: #673AB7;")
-				br
-				.col_2
-					.tem_container
-						h2 Node.Js y Express
-						p - ¿Qué es Node.Js y Express?
-						p - Creacion de servidor y URL’s
-						p - Jade vs HTML
-						p - Creacion de Modulos
-						p - Métodos GET, POST, DELETE y PUT
-						p - Sesiones
-						p - Creación de API REST
-					.tem_container
-						h2 Bases de Datos NoSQL con MongoDB
-						p - ¿Qué es una DB NoSQL?
-						p - Comandos y Shell de MongoDB
-						p - CRUD (Create, Read, Update, Delete)
-						p - Aggregation Framework
-						p - Implementación con Node.Js
-				.col_2
-					.tem_container
-						h2 AngularJS
-						P - ¿Qué es AngularJS?
-						P - ¿Qué es una SPA?
-						P - Application, Controller, $scopes y Directivas
-						P - Filtros
-						P - Consumo de API’s con $http
-						P - Factories y Services
-						P - Promesas y buenas practicas
-				.pd_32
-				.center_text
-					.col_4
-						img.icon_img(src="/images/icons/nodejs.png")
-					.col_4
-						img.icon_img(src="/images/icons/dbs_mongodb.png")
-					.col_4
-						img.icon_img(src="/images/icons/angular.png")
-					.col_4
-						img.icon_img(src="/images/icons/json.png")
-				.pd_32.mr_bottom_32
-			section
-				.pd_32
-					h2.title.mr_bottom_32 Extras
-					.line(style="background-color: #FFC107;")
-					br
-					.tem_container
-						h2 Desarrollo de proyecto
-						p - Desarrollo de un carrito de compras cubriendo todo el temario
-							b  Teoria-Practica
-					br
-					.tem_container
-						h2 GitHub y Git
-						p - ¿Qúe es GitHub y Git?
-						p - Uso de git y github para versionamiento de proyectos y trabajo en equipo
-						p - Comandos y creación de Ramas
-					br
-					.tem_container
-						h2 AWS (Amazon Web Services)
-						p - Creación de una instancia con AWS
-				.pd_32
-				.center_text
-					.col_4
-						img.icon_img(src="/images/icons/github-circle.png")
-					.col_4
-						img.icon_img(src="/images/icons/git.png")
-					.col_4
-						img.icon_img(src="/images/icons/amazon-clouddrive.png")
-				.pd_16
-	.super_padding.bg_indigo.font_color_white
-		h1.title_big.mr_bottom_32 Precios
-		.line(style="background-color: #fff;")
-		br
-		div(style="text-align: center")
-			.col_2
-				.pd_32
-					h3.title_small.mr_bottom_8 Curso Individual
-					h2.title_big $1600.00 MXN
-			.col_2
-				.pd_32
-					h3.title_small.mr_bottom_8 Ambos Cursos
-					h2.title_big $2200.00 MXN
-			div.mr_bottom_16
-				.pd_32
-					h3.title_small.mr_bottom_8 Para apartar un lugar:
-					h2.title $1000.00 MXN
-			div(style="text-align: left;")
-				h2.title_small.mr_bottom_8 Contado: 
-				p 1 Curso $1400.00 MXN 
-				p Ambos Cursos $1900.00 MXN
-	.super_padding(style="text-align: center;")
-		h1.title_big.mr_bottom_32 Dirección
-		p.title_small.mr_bottom_8 Ignacio Allende 21, Amp Torre Blanca, 11289 Ciudad de México, CDMX
-		h3.title Startup México
-		.map_container
-			iframe(width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Startup+México&output=embed")
-
-	.super_padding.bg_blue
-		h1.title_big Inicio
-		.center_text
-			.pd_16
-			p.title_small Sabado 29 de Abril, 10:00 a 18:00
-
-	#registro.super_padding
-		.form_container
-			.title_big Registrate aqui
-			.pd_32
-			form( ng-controller="registroCtrl", ng-submit="registra()" )
-				.col_2
-					div(style="padding-right: 16px;")
-						.text_field
-							p Nombre Completo
-							input( type="text", ng-model="registro.nombre" placeholder="Nombre Completo" required-field, validation-type="letters", data-length="min 10")
-						br
-						.text_field
-							p Curso de interes
-							select( ng-model="registro.curso" required-field )
-								option(disabled selected value="") Elige Curso
-								option(value="both") Curso de BackEnd y FrontEnd
-								option(value="back") Curso BackEnd
-								option(value="front") Curso FrontEnd
-						br
-						.text_field
-							p Edad
-							input( type="text", ng-model="registro.edad" placeholder="Edad" required-field, validation-type="numbers" )
-				.col_2
-					div(style="padding-left: 16px;")
-						.text_field
-							p Correo Electrónico
-							input( type="email", ng-model="registro.email" placeholder="Correo Electrónico" required-field, validation-type="email" )
-						br
-						.text_field
-							p Teléfono de contacto (Celular de preferencia)
-							input( type="text", ng-model="registro.telefono" placeholder="Teléfono" required-field, validation-type="numbers", data-length="8-12" )
-						br
-						.text_field
-							p Escuela de Procedencia (En caso de que aplique)
-							input( type="text", ng-model="registro.escuela" placeholder="Escuela" data-length="min 5" )
-				.pd_16
-				.text_field(style="text-align: right;")
-					input( type="submit", value="Registrarse" )
-
-	.super_padding.bg_black
-		.title_big Contacto
-		.pd_16
-		.pd_32.center_text(style="padding-bottom: 0;")
-			.col_2
-				p.mr_bottom_8 55 4699 8574
-				p alejandrodnl.cv@hotmail.com
-			.col_2
-				p.mr_bottom_8 55 1728 6341
-				p diegojmartinezzm@gmail.com
-
+	script( src="/javascripts/validation-plugin.js" )
+	script(type='text/javascript', src='js/popper.min.js')
+	script(type='text/javascript', src='js/bootstrap.min.js')
+	script(type='text/javascript', src='js/mdb.min.js')
 	script.
-		$('form').formValidation({
-			mainAlert: true
-		});
-
-		$('.parallax_container').each( function( index ) {
-			$(this).parallaxEffect();
-		});
-
-		$('#ir_registro').click( function() {
-			$('body').animate({
-				'scrollTop': jQuery('#registro').offset().top
-			}, 1200);
-		});
+		new WOW().init();
 		

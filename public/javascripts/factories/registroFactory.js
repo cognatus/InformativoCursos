@@ -19,7 +19,7 @@
 						escuela: 	datos.escuela
 					} 
 				}).then(function successCallback(response) {
-					alert('Registrado con exito');
+					swal("Cool!", "Te haz registrado con exito!", "success");
 					window.location.href = "/";
 				}, function errorCallback(response) {
 					
