@@ -31,11 +31,9 @@ router.post('/registrar', function(req, res, next) {
 
 router.post('/loguearse', function(req, res, next) {
 
-	Admin.find({ user: req.body.user, psw: req.body.psw }, function(err, admin){
+	Admin.find({ _id: req.body.user, psw: req.body.psw }, function(err, admin){
 
 		if( err || admin[0] == undefined ){
-
-			console.log(req)
 
 			res.status(405).send('No tienes permiso dude');
 
