@@ -1,15 +1,18 @@
 doctype html
-html.full-height(lang='en-US')
+html
 	head
-		meta(charset='UTF-8')
-		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		title codeaChido
+		title= title
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, maximum-scale=1.0 user-scalable=no')
 		meta( name="description", content="Iniciativa para estudiantes, emprendedores o simplemente los que quieren aprender a programar, desarrollar aplicaciones web y más!" )
-		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-		link(href='css/bootstrap.min.css', rel='stylesheet')
-		link(href='css/mdb.min.css', rel='stylesheet')
-		link(href='styles/main.css', rel='stylesheet')
+		meta(itemprop='name', content='CodeaChido')
+		meta(itemprop='description', content='Codea bien chido con CodeaChido')
+		meta(itemprop='image', content='https://scontent.fmex7-2.fna.fbcdn.net/v/t1.0-9/18740040_427557830933362_7967643049407752778_n.png?oh=5a1a2d95fe8695208b29f474f8043e53&oe=5B46B619')
+		meta(property='og:title', content='CodeaChido')
+		meta(property='og:url', content='http://www.codeachido.com/')
+		meta(property='og:image', content='https://scontent.fmex7-2.fna.fbcdn.net/v/t1.0-9/18700272_427556457600166_6366412754312688908_n.png?oh=7feda344e4ed30614eac62927297a9da&oe=5B43CCD3')
+		meta(property='og:description', content='Codea bien chido con CodeaChido')
+		meta(property='og:site_name', content='CodeaChido')
 		script.
 			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 			n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -24,6 +27,9 @@ html.full-height(lang='en-US')
 			fbq('track', 'Search', {
 			search_string: 'leather sandals'
 			});
+
+
+		link(rel='stylesheet', href='/stylesheets/style.css')
 		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,5 +37,5 @@ html.full-height(lang='en-US')
 			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 			ga('create', 'UA-86044758-2', 'auto');
 			ga('send', 'pageview');
-	body#top( ng-app="aplicacion" )
+	body( ng-app="aplicacion" )
 		block content
